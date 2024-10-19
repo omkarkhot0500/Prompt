@@ -1,11 +1,7 @@
 "use client";
-import dynamic from "next/dynamic";
 import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Form from "@components/Form";
-
-// Dynamically import the component to avoid static rendering
-export const dynamic = "force-dynamic";
 
 const UpdatePrompt = () => {
   const router = useRouter();
@@ -61,4 +57,4 @@ const UpdatePrompt = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(UpdatePrompt), { ssr: false });
+export default UpdatePrompt;
